@@ -276,7 +276,7 @@ class sell_delivery(models.Model):
     def onchange_benefit_rate(self):
         total = sum(line.subtotal for line in self.line_in_ids)
         if self.benefit_rate:
-            self.discount_amount = total * self.benefit_rate * 0.01
+            self.benefit_amount = total * self.benefit_rate * 0.01
 
     @api.model
     def create(self, vals):
